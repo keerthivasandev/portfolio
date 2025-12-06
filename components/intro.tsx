@@ -1,0 +1,50 @@
+"use client";
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+export function Intro() {
+  return (
+    <section>
+      <div className="flex items-center justify-center">
+        <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "tween", duration: 0.2 }}
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100"
+              alt="Keerthivasan K"
+              width={96}
+              height={96}
+              priority={true}
+              quality={95}
+              className="w-24 h-24 rounded-full border-[0.35rem] border-white object-cover shadow-xl"
+            />
+          </motion.div>
+          <motion.span
+            className="text-4xl absolute bottom-0 right-0"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 125,
+              delay: 0.1,
+              duration: 0.7,
+            }}
+          >
+            👋
+          </motion.span>
+        </div>
+      </div>
+      <p className="">
+      <span className="font-bold">Hello, I'm Keerthivasan K.</span> I'm a{" "}
+      <span className="font-bold">full-stack developer</span> with{" "}
+      <span className="font-bold">3 years</span> of experience. I enjoy building{" "}
+      <span className="italic">sites & apps</span>. My focus is{" "}
+      <span className="underline">React (Next.js)</span>.
+      </p>
+    </section>
+  );
+}
